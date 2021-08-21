@@ -22,7 +22,7 @@ body {
 
 h1 {
   text-align: center;
-  margin: 0.5em 0;
+  margin: 0.3em 0 0 0;
   color: rgb(156, 156, 156);
   font-size: 3em;
   text-shadow: 1px 1px 1px black;
@@ -37,13 +37,9 @@ h1 {
   margin: 0 auto;
 }
 
-#intro h1 {
-  margin: 0.3em 0;
-}
-
 button {
   font-size: 2rem;
-  margin: 15px;
+  margin: 0 15px;
   height: fit-content;
   background-color: rgb(160, 81, 45);
   color: #ccc;
@@ -167,9 +163,9 @@ li {
   display: flex;
   flex-flow: row wrap;
   width: 450px;
-  height: 650px;
+  height: 620px;
   padding: 0.5em 3em;
-  margin: 1em;
+  margin: 0.8em 1em;
   background-color: rgb(51, 37, 0);
   border-radius: 5px;
   color: #ccc;
@@ -181,6 +177,6 @@ li {
 
 img {
   width: 95%;
-  margin: 15px 0;
+  margin: 10px 0;
   border-radius: 5px;
 }

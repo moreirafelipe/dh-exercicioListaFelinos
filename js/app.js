@@ -1,5 +1,4 @@
 /*Iniciando array de objetos contendo dados dos animais*/
-
 const listadeFelinos = [
   {
     title: 'O tigre',
@@ -40,47 +39,42 @@ const listadeFelinos = [
 ];
 
 /*Armazenando elementos do DOM para manipulação*/
-
 let counter = 0;
 let body = document.querySelector('body');
 let checkbox = document.querySelector("input[type=checkbox]");
-let lista = document.querySelector('#lista-animais');
+let lista = document.getElementById('lista-animais');
 let card = document.querySelectorAll('li');
 
-
 /*Escutador de eventos - aguarda o botão modo escuro ser acionado para ativar estilos com cores diferentes*/
-
 checkbox.addEventListener('change', () => {
 
   //Atualizando lista de cards renderizados
   card = document.querySelectorAll('li');
   
-
-  //Atualiza lista de animais e aplica estilos de modo escuro caso esteja ativo
+  //Atualiza lista de animais e aplica estilos do modo de cor que está ativo
   checkbox.checked ? card.forEach(item => {item.style.backgroundColor="#ccc";}) : card.forEach(item => {item.style.backgroundColor="rgb(51, 37, 0)";});
   checkbox.checked ? card.forEach(item => {item.style.color="#000";}) : card.forEach(item => {item.style.color="#ccc";});
   checkbox.checked ? body.classList.add("dark-mode") : body.classList.remove("dark-mode");
 });
 
 //Função que renderiza um novo card
-
 function gerar(){
 
   //Verifica se o contador de cliques atingiu o limite de animais do array listadeFelinos
   if(counter < listadeFelinos.length) {
 
+    //Cria novo elemento list-item
+    let itemLista = document.createElement('LI');
 
   //adiciona novo item de lista com os dados do animal conforme o contador
-    lista.innerHTML +=
-                          `<li>
-                            <h2>${listadeFelinos[counter].title}</h2>
+    itemLista.innerHTML =  `<h2>${listadeFelinos[counter].title}</h2>
                             \n<img src="${listadeFelinos[counter].imgUrl}">
                             \n<p>${listadeFelinos[counter].description}</p>
-                            \n<p>Criado em: ${listadeFelinos[counter].createdAt}</p>
-                            </li>`;
-    
+                            \n<p>Criado em: ${listadeFelinos[counter].createdAt}</p>`;
 
-    //Atualiza lista de animais e aplica estilos de modo escuro caso esteja ativo
+    lista.insertBefore(itemLista, lista.childNodes[0]);
+    
+    //Atualiza lista de animais e aplica estilos do modo de cor que está ativo
     card = document.querySelectorAll('li');
     checkbox.checked ? card.forEach(item => {item.style.backgroundColor="#ccc";}) : card.forEach(item => {item.style.backgroundColor="rgb(51, 37, 0)";});
     checkbox.checked ? card.forEach(item => {item.style.color="#000";}) : card.forEach(item => {item.style.color="#ccc";});
