@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+/* Reset css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Estilos para elementos gerais */
+
+body {
+  background-color: rgba(255, 255, 0, 0.19);
+  transition: background-color 0.3s;
+}
+
+#container {
+  margin: 0 25px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0.5em 0;
+  color: rgb(156, 156, 156);
+  font-size: 3em;
+  text-shadow: 1px 1px 1px black;
+}
+
+/* Estilos para o cabeçalho */
+
+#intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#intro h1 {
+  margin: 0.3em 0;
+}
+
+button {
+  font-size: 2rem;
+  margin: 15px;
+  height: fit-content;
+  background-color: rgb(160, 81, 45);
+  color: #ccc;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/*Classe para mudança de cor de fundo da página*/
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+/*Estilos e animações para o botão de modo escuro*/
+
+.toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.toggle-slot {
+  position: relative;
+  height: 4em;
+  width: 8em;
+  border: 5px solid #a35c009d;
+  border-radius: 10em;
+  background-color: white;
+  transition: background-color 250ms;
+  cursor: pointer;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: #6e3318;
+}
+
+.toggle-button {
+  transform: translate(4.2em, 0.45em);
+  position: absolute;
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 50%;
+  background-color: #ffeccf;
+  box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+  transition: background-color 250ms, border-color 250ms,
+    transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: #a15431;
+  box-shadow: inset 0px 0px 0px 0.75em white;
+  transform: translate(0.7em, 0.45em);
+}
+
+.sun-icon {
+  position: absolute;
+  height: 2.5em;
+  width: 2.5em;
+  color: #ffbb52;
+}
+
+.subst-icone-sol {
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  opacity: 1;
+  transform: translate(0.5em, 0.5em) rotate(15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .subst-icone-sol {
+  opacity: 0;
+  transform: translate(3em, 0.75em) rotate(0deg);
+}
+
+.moon-icon {
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  color: white;
+}
+
+.subst-icone-lua {
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  opacity: 0;
+  transform: translate(5em, 0.5em) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(0.26, 2.5, 0.46, 0.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .subst-icone-lua {
+  opacity: 1;
+  transform: translate(4em, 0.2em) rotate(-15deg);
+}
+
+/* Estilos para a lista de cards de animais */
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  align-items: center;
+  justify-content: start;
+}
+
+h2 {
+  margin: 1rem 0 0 0;
+}
+
+/*Estilos de cada card*/
+
+li {
+  display: flex;
+  flex-flow: row wrap;
+  width: 450px;
+  height: 650px;
+  padding: 0.5em 3em;
+  margin: 1em;
+  background-color: rgb(51, 37, 0);
+  border-radius: 5px;
+  color: #ccc;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+/*Estilos para cada foto de animal*/
+
+img {
+  width: 95%;
+  margin: 15px 0;
+  border-radius: 5px;
+}

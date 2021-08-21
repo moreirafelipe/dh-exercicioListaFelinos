@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(WrkTb Aula 05)</title>
+  <!-- Importando icones do botão de modo escuro-->
+  <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <body>
+
+    <h1>Animais curiosos</h1>
+
+    <!-- Cabeçalho que contém botão de gerar animais e botão modo escuro -->
+
+    <div id="intro">
+
+      <!-- Botão que chama a função gerar, para incluir cards de animais -->
+      <div>
+        <button onclick="gerar()">+🐯</button>
+      </div>
+
+      <!-- Botão de modo escuro -->
+
+      <label>
+        <input class='toggle-checkbox' type='checkbox'></input>
+        <div class='toggle-slot'>
+          <div class='subst-icone-sol'>
+            <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+          </div>
+          <div class='toggle-button'></div>
+          <div class='subst-icone-lua'>
+            <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+          </div>
+        </div>
+      </label>
+
+    </div>
+
+    <!-- Container flex para organização dos cards -->
+
+    <div id="container">
+      <!-- Lista pré renderizada para conter os cards de animais incluidos a cada clique no botão + -->
+      <ul id="lista-animais">
+      </ul>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+
+</body>
+
+</html>
