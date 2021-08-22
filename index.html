@@ -22,8 +22,13 @@
     <div id="intro">
 
       <!-- Botão que chama a função gerar, para incluir cards de animais -->
-      <div>
-        <button onclick="gerar()">+🐯</button>
+      <div id="botoes">
+        <button onclick="gerarCard()">
+          +<img src="./img/cat.svg" alt="">
+        </button>
+        <button onclick="reload()">
+          <img src="./img/refresh.svg" alt="">
+        </button>
       </div>
 
       <!-- Botão de modo escuro -->
@@ -46,6 +51,7 @@
     <!-- Container flex para organização dos cards -->
 
     <div id="container">
+
       <!-- Lista pré renderizada para conter os cards de animais incluidos a cada clique no botão + -->
       <ul id="lista-animais">
       </ul>

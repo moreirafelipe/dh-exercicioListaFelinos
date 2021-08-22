@@ -44,21 +44,33 @@ let body = document.querySelector('body');
 let checkbox = document.querySelector("input[type=checkbox]");
 let lista = document.getElementById('lista-animais');
 let card = document.querySelectorAll('li');
+let buttons = document.querySelectorAll('button');
+
+const reload = () => {
+
+  window.location.reload();
+
+}
+
+//Função para alterar estilos de cores no modo escuro/ claro
+const definirCor = (item) => {
+    //Condicionais ternárias que aplicam estilos do modo de cor que está ativo
+    checkbox.checked ? item.forEach(item => {item.style.backgroundColor="#ccc";}) : item.forEach(item => {item.style.backgroundColor="rgb(51, 37, 0)";});
+    checkbox.checked ? item.forEach(item => {item.style.color="#000";}) : item.forEach(item => {item.style.color="#ccc";});
+    checkbox.checked ? body.classList.add("dark-mode") : body.classList.remove("dark-mode");
+    checkbox.checked ? buttons.forEach(item => {item.style.backgroundColor="#fff";}) : buttons.forEach(item => {item.style.backgroundColor="#a0512d";});
+}
+
 
 /*Escutador de eventos - aguarda o botão modo escuro ser acionado para ativar estilos com cores diferentes*/
 checkbox.addEventListener('change', () => {
-
   //Atualizando lista de cards renderizados
   card = document.querySelectorAll('li');
-  
-  //Atualiza lista de animais e aplica estilos do modo de cor que está ativo
-  checkbox.checked ? card.forEach(item => {item.style.backgroundColor="#ccc";}) : card.forEach(item => {item.style.backgroundColor="rgb(51, 37, 0)";});
-  checkbox.checked ? card.forEach(item => {item.style.color="#000";}) : card.forEach(item => {item.style.color="#ccc";});
-  checkbox.checked ? body.classList.add("dark-mode") : body.classList.remove("dark-mode");
+  definirCor(card);
 });
 
 //Função que renderiza um novo card
-function gerar(){
+function gerarCard(){
 
   //Verifica se o contador de cliques atingiu o limite de animais do array listadeFelinos
   if(counter < listadeFelinos.length) {
@@ -76,8 +88,7 @@ function gerar(){
     
     //Atualiza lista de animais e aplica estilos do modo de cor que está ativo
     card = document.querySelectorAll('li');
-    checkbox.checked ? card.forEach(item => {item.style.backgroundColor="#ccc";}) : card.forEach(item => {item.style.backgroundColor="rgb(51, 37, 0)";});
-    checkbox.checked ? card.forEach(item => {item.style.color="#000";}) : card.forEach(item => {item.style.color="#ccc";});
+    definirCor(card);
 
     //Incrementa valor 1, para constar que um novo card foi adicionado
     counter+=1;
