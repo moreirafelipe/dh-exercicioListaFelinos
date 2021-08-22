@@ -46,10 +46,10 @@ let lista = document.getElementById('lista-animais');
 let card = document.querySelectorAll('li');
 let buttons = document.querySelectorAll('button');
 
+
+//Função que recarrega a página
 const reload = () => {
-
   window.location.reload();
-
 }
 
 //Função para alterar estilos de cores no modo escuro/ claro
@@ -78,7 +78,7 @@ function gerarCard(){
     //Cria novo elemento list-item
     let itemLista = document.createElement('LI');
 
-  //adiciona novo item de lista com os dados do animal conforme o contador
+  //adiciona novo item de lista antes da posição 0, com os dados do animal conforme o contador
     itemLista.innerHTML =  `<h2>${listadeFelinos[counter].title}</h2>
                             \n<img src="${listadeFelinos[counter].imgUrl}">
                             \n<p>${listadeFelinos[counter].description}</p>
