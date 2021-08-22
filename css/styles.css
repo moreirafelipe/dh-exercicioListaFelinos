@@ -22,7 +22,7 @@ body {
 
 h1 {
   text-align: center;
-  margin: 3px 0;
+  margin: 0;
   color: rgb(156, 156, 156);
   font-size: 3em;
   text-shadow: 1px 1px 1px black;
@@ -176,8 +176,8 @@ h2 {
 li {
   display: flex;
   flex-flow: row wrap;
-  width: 450px;
-  height: 620px;
+  width: 28vw;
+  height: 75vh;
   padding: 0.5em 3em;
   margin: 0.8em 1em;
   background-color: rgb(51, 37, 0);
@@ -193,4 +193,8 @@ img {
   width: 95%;
   margin: 10px 0;
   border-radius: 5px;
+}
+
+p {
+  font-size: 0.8em;
 }
