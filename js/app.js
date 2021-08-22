@@ -74,9 +74,6 @@ function gerarCard(){
 
   //Verifica se o contador de cliques atingiu o limite de animais do array listadeFelinos
   if(counter < listadeFelinos.length) {
-/* 
-    const dataBrasil = (listadeFelinos[counter].createdAt.slice(0,10)).split('-').reverse().join('/');
-    dataBrasil = dataBrasil[02] + "-" + dataBrasil[01]  */
 
     //Cria novo elemento list-item
     let itemLista = document.createElement('LI');
